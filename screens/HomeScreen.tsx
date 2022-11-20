@@ -1,8 +1,11 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, ScrollView } from "react-native";
 import { RootTabScreenProps } from "../types";
 import { AntDesign, Feather, Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
+import SliderComponent from "../components/SliderComponent";
+import CategoriesComponent from "../components/CategoriesComponent";
+import PopularComponent from "../components/PopularComponent";
 
 export default function HomeScreen({
   navigation,
@@ -11,17 +14,22 @@ export default function HomeScreen({
     <View style={styles.container}>
       <View style={styles.topWrapper1} />
       <View style={styles.searchBar}>
-          <AntDesign
-            name="search1"
-            size={24}
-            color="black"
-            style={{ marginLeft: 10 }}
-          />
-          <TextInput style={styles.input} placeholder="Search" />
-        </View>
-        {/* end of search bar */}
+        <AntDesign
+          name="search1"
+          size={24}
+          color="black"
+          style={{ marginLeft: 10 }}
+        />
+        <TextInput style={styles.input} placeholder="Search" />
+      </View>
+      {/* end of search bar */}
       <View style={styles.ExternalComponents}>
-        <Text>Home Screen</Text>
+        <SliderComponent />
+
+        <ScrollView>
+          <CategoriesComponent />
+          <PopularComponent />
+        </ScrollView>
       </View>
     </View>
   );
@@ -59,7 +67,5 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     height: "100%",
     width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
