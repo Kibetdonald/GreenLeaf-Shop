@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TextInput } from "react-native";
 import { RootTabScreenProps } from "../types";
 import { AntDesign, Feather, Entypo } from "@expo/vector-icons";
 import React from "react";
+import AllCategories from "../components/AllCategories";
 
 export default function CategoriesScreen() {
   return (
@@ -18,7 +19,9 @@ export default function CategoriesScreen() {
       </View>
       {/* end of search bar */}
       <View style={styles.ExternalComponents}>
-        <Text>Categories Screen</Text>
+        {/* Impliment flatlist */}
+        <AllCategories/>
+      
       </View>
     </View>
   );
@@ -56,7 +59,5 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     height: "100%",
     width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

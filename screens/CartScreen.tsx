@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TextInput } from "react-native";
 import { RootTabScreenProps } from "../types";
 import { AntDesign, Feather, Entypo } from "@expo/vector-icons";
 import React from "react";
+import AllPopularCategories from "../components/AllPopularCategories";
 
 export default function CartScreen() {
   return (
@@ -19,6 +20,7 @@ export default function CartScreen() {
       {/* end of search bar */}
       <View style={styles.ExternalComponents}>
         <Text>Cart Screen</Text>
+        <AllPopularCategories/>
       </View>
     </View>
   );
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     height: "100%",
     width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
 });
